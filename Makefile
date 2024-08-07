@@ -1,6 +1,7 @@
 # Variables
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c11
+LDFLAGS = -lncurses
 SRC_DIR = src
 BUILD_DIR = build
 TARGET = $(BUILD_DIR)/main
@@ -17,7 +18,7 @@ build: $(TARGET)
 
 $(TARGET): $(OBJS)
 	@mkdir -p $(BUILD_DIR)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(LDFLAGS)
 	@echo "Build completed."
 
 # Development target
